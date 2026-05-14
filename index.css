@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --verdeClaro: rgb(219, 255, 197);
+    --verdeEscuro: rgb(36, 120, 0);
+}
+
+main, .formCard h2, .bloco1, .bloco2, .botao{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    position: relative;
+    top: 1rem;
+}
+
+.formCard h2{
+    margin-bottom: 2rem;
+}
+
+.formCard{
+    background-color: var(--verdeClaro);
+    margin: 20px;
+    padding: 20px;
+    width: 50rem;
+    height: 21rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0.5);
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+}
+
+#valor, #nome, #data, #categorias, #tipo, #pagamento{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.bloco1, .bloco2{
+    margin-top: 20px;
+    gap: 4rem;
+}
+
+.botao button{
+    position: relative;
+    top: 30px;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 30px;
+    border: 1px solid black;
+    transition: ease 0.5s;
+    cursor: pointer;
+}
+
+.botao button:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.2);
+}
+
+hr{
+    height: 2px;
+    background-color: var(--verdeEscuro);
+    border: none;
+    position: relative;
+    bottom: 15px;
+}
