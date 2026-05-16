@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function carregarTodosDados() {
     await carregarListaGastos();
-    await carregarTotalPagos();
-    await carregarTotalNaoPagos();
     await carregarGraficoPorCategoria();
     await carregarGraficoPorMes();
 }
@@ -78,68 +76,6 @@ async function carregarListaGastos() {
     }
 }
 
-async function carregarTotalPagos() {
-    try {
-        const response = await fetch('api.php?tipo=total_pagos');
-        const dados = await response.json();
-        const total = dados.total || 0;
-        
-        const canvas = document.getElementById('graficoGastosPagos');
-        if (!canvas) return;
-        
-        const ctx = canvas.getContext('2d');
-        if (graficoPagos) graficoPagos.destroy();
-        
-        graficoPagos = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Pagos', 'Restante'],
-                datasets: [{
-                    data: [total, 0],
-                    backgroundColor: ['#4CAF50', '#E0E0E0']
-                }]
-            },
-            options: {
-                cutout: '70%',
-                plugins: { legend: { position: 'bottom' } }
-            }
-        });
-    } catch (error) {
-        console.error('Erro ao carregar total pago:', error);
-    }
-}
-
-async function carregarTotalNaoPagos() {
-    try {
-        const response = await fetch('api.php?tipo=total_naopagos');
-        const dados = await response.json();
-        const total = dados.total || 0;
-        
-        const canvas = document.getElementById('graficoGastosNaoPagos');
-        if (!canvas) return;
-        
-        const ctx = canvas.getContext('2d');
-        if (graficoNaoPagos) graficoNaoPagos.destroy();
-        
-        graficoNaoPagos = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Não Pagos', 'Restante'],
-                datasets: [{
-                    data: [total, 0],
-                    backgroundColor: ['#FF5722', '#E0E0E0']
-                }]
-            },
-            options: {
-                cutout: '70%',
-                plugins: { legend: { position: 'bottom' } }
-            }
-        });
-    } catch (error) {
-        console.error('Erro ao carregar total não pago:', error);
-    }
-}
-
 async function carregarGraficoPorCategoria() {
     try {
         const response = await fetch('api.php?tipo=categorias');
@@ -160,7 +96,7 @@ async function carregarGraficoPorCategoria() {
                 labels: categorias,
                 datasets: [{
                     data: valores,
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40']
+                    backgroundColor: ['#ff4a71', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#ff7040']
                 }]
             },
             options: {

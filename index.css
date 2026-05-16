@@ -1,36 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inconsolata:wght@200..900&family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Nova+Square&family=Oswald:wght@200..700&family=Prosto+One&family=Roboto+Slab:wght@100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Caveat', cursive;
 }
 
 :root{
-    --verdeClaro: rgb(219, 255, 197);
-    --verdeEscuro: rgb(36, 120, 0);
+    --fundoBody: rgb(255, 203, 255);
+    --rosaClaro: rgb(255, 125, 186);
+    --rosaEscuro: rgb(255, 4, 125);
+    --lilas: rgb(221, 182, 255);
 }
 
-main, .formCard h2, .bloco1, .bloco2, .botao{
+body{
+    background-color: var(--fundoBody);
+    min-height: 100vh;
+    width: 100%;
+    font-size: 25px;
+}
+
+main{
     display: flex;
-    justify-content: center;
-}
-
-form{
-    position: relative;
-    top: 1rem;
-}
-
-.formCard h2{
-    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
 }
 
 .formCard{
-    background-color: var(--verdeClaro);
+    background-color: var(--lilas);
     margin: 20px;
     padding: 20px;
     width: 50rem;
-    height: 21rem;
+    max-width: 90%;
     border-radius: 10px;
     box-shadow: 5px 5px 20px 0px rgba(0, 0, 0.5);
+}
+
+.formCard h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+form > div{
+    flex: 1;
+    min-width: 150px;
 }
 
 label{
@@ -39,38 +60,96 @@ label{
 }
 
 #valor, #nome, #data, #categorias, #tipo, #pagamento{
-    width: 10rem;
+    width: 100%;
     height: 2rem;
     border-radius: 20px;
-    border: 1px solid black;
+    border: none;
+    padding: 0 10px;
+    background-color: var(--rosaClaro);
+    font-size: 20px;
 }
 
-.bloco1, .bloco2{
-    margin-top: 20px;
-    gap: 4rem;
+.botao{
+    flex: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .botao button{
-    position: relative;
-    top: 30px;
-    width: 4rem;
+    width: 6rem;
     height: 2rem;
     border-radius: 30px;
     border: 1px solid black;
     transition: ease 0.5s;
     cursor: pointer;
+    background-color: var(--rosaClaro);
+    font-size: 20px;
 }
 
 .botao button:hover{
     background-color: black;
     color: white;
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 hr{
     height: 2px;
-    background-color: var(--verdeEscuro);
+    background-color: black;
     border: none;
-    position: relative;
-    bottom: 15px;
+    margin: 20px 0;
+}
+
+.graficos-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.grafico-pagos, .grafico-categoria, .grafico-mensal{
+    text-align: center;
+}
+
+.table-container{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.tabelaGastosPagos, .tabelaGastosNaoPagos{
+    flex: 1;
+    min-width: 300px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: var(--rosaEscuro);
+    color: white;
+}
+
+td{
+    background-color: white;
+}
+
+.deletar{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
 }

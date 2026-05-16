@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analisador de gastos</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css?v=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -13,97 +13,85 @@
             <h2>Adicionar gastos</h2>
             <hr>
             <form id="formGasto">
-                <div class="bloco1">
-                    <div class="nome">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" required>
-                    </div>
-                    <div class="valor">
-                        <label for="valor">Valor</label>
-                        <input type="number" id="valor" step="0.01" min="0" required>
-                    </div>
-                    <div class="pagamento">
-                        <label for="pagamento">Já foi pago?</label>
-                        <select name="pagamento" id="pagamento">
-                            <option value="" hidden disabled selected></option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
-                        </select>
-                    </div>
+                <div class="nome">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" required>
                 </div>
-                <div class="bloco2">
-                    <div>
-                        <label for="data">Data</label>
-                        <input type="date" id="data" required>
-                    </div>
-                    <div>
-                        <label for="categorias">Categorias</label>
-                        <select name="categorias" id="categorias">
-                            <option value="" hidden disabled selected></option>
-                        </select>
-                    </div>
-                    <div class="tipo">
-                        <label for="tipo">Tipo de pagamento</label>
-                        <select name="tipo" id="tipo">
-                            <option value="" hidden disabled selected></option>
-                        </select>
-                    </div>
+                <div class="valor">
+                    <label for="valor">Valor</label>
+                    <input type="number" id="valor" step="0.01" min="0" required>
+                </div>
+                <div class="pagamento">
+                    <label for="pagamento">Já foi pago?</label>
+                    <select name="pagamento" id="pagamento">
+                        <option value="" hidden disabled selected></option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
+                <div class="data">
+                    <label for="data">Data</label>
+                    <input type="date" id="data" required>
+                </div>
+                <div class="categorias">
+                    <label for="categorias">Categorias</label>
+                    <select name="categorias" id="categorias"></select>
+                </div>
+                <div class="tipo">
+                    <label for="tipo">Tipo de pagamento</label>
+                    <select name="tipo" id="tipo"></select>
                 </div>
                 <div class="botao">
                     <button type="submit">Salvar</button>
                 </div>
             </form>
         </div>
-        
-        <div class="graficos-container">
-            <div class="grafico-item">
-                <h3>Total Pago</h3>
-                <canvas id="graficoGastosPagos" width="200" height="200"></canvas>
+
+        <div class="table-container">
+            <div class="tabelaGastosPagos">
+                <h2>Compras pagas</h2>
+                <table id="tabelaGastosPagos">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data</th>
+                            <th>Categoria</th>
+                            <th>Valor</th>
+                            <th>Tipo De Pagamento</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaGastosPagos"></tbody>
+                </table>
             </div>
-            <div class="grafico-item">
-                <h3>Total Não Pago</h3>
-                <canvas id="graficoGastosNaoPagos" width="200" height="200"></canvas>
-            </div>
-            <div class="grafico-item">
-                <h3>Gastos por Categoria</h3>
-                <canvas id="graficoPizzaCategorias" width="400" height="300"></canvas>
-            </div>
-            <div class="grafico-item">
-                <h3>Evolução Mensal</h3>
-                <canvas id="graficoLinhaMeses" width="400" height="300"></canvas>
+            
+            <div class="tabelaGastosNaoPagos">
+                <h2>Compras não pagas</h2>
+                <table id="tabelaGastosNaoPagos">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data</th>
+                            <th>Categoria</th>
+                            <th>Valor</th>
+                            <th>Tipo De Pagamento</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaGastosNaoPagos"></tbody>
+                </table>
             </div>
         </div>
         
-        <div class="table-container">
-            <h2>Compras pagas</h2>
-            <table id="tabelaGastosPagos">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Data</th>
-                        <th>Categoria</th>
-                        <th>Valor</th>
-                        <th>Tipo De Pagamento</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody id="listaGastosPagos"></tbody>
-            </table>
-            
-            <h2>Compras não pagas</h2>
-            <table id="tabelaGastosNaoPagos">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Data</th>
-                        <th>Categoria</th>
-                        <th>Valor</th>
-                        <th>Tipo De Pagamento</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody id="listaGastosNaoPagos"></tbody>
-            </table>
+        <div class="graficos-container">
+            <div class="grafico-categoria">
+                <h3>Gastos por Categoria</h3>
+                <canvas id="graficoPizzaCategorias" width="400" height="300"></canvas>
+            </div>
+            <div class="grafico-mensal">
+                <h3>Evolução Mensal</h3>
+                <canvas id="graficoLinhaMeses" width="400" height="300"></canvas>
+            </div>
         </div>
     </main>
     <script src="funcoes.js"></script>
