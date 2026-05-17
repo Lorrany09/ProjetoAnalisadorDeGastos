@@ -109,8 +109,17 @@ hr{
     margin: 20px 0;
 }
 
-.grafico-pagos, .grafico-categoria, .grafico-mensal{
+.tituloGrafico{
     text-align: center;
+}
+
+.grafico-comparativo, .grafico-categoria, .grafico-mensal{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--lilas);
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .table-container{
@@ -120,36 +129,65 @@ hr{
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
+    max-height: none;
+    height: auto;
+    overflow: visible;
 }
 
 .tabelaGastosPagos, .tabelaGastosNaoPagos{
     flex: 1;
     min-width: 300px;
+    max-height: none;
+    height: auto;
+    overflow: visible;
 }
 
 table{
     width: 100%;
     border-collapse: collapse;
+    height: auto;
 }
 
 th, td{
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
+    border: 3px solid var(--rosaEscuro);
+    padding: 10px;
+    background-color: white;
 }
 
 th{
-    background-color: var(--rosaEscuro);
-    color: white;
+    color: var(--rosaEscuro);
+    text-align: center;
 }
 
-td{
-    background-color: white;
+tbody{
+    height: auto;
+    overflow: visible;
+}
+
+#tituloPrincipal{
+    background-color: var(--rosaEscuro);
+    color: white;
 }
 
 .deletar{
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
+}
+
+footer{
+    background-color: var(--rosaEscuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    margin-top: auto;
+    color: white;
+    font-weight: 900;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }

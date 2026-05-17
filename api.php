@@ -29,7 +29,6 @@ if ($method == 'GET') {
         $sql = "SELECT c.nome, SUM(g.valor) as total 
                 FROM gastos g
                 JOIN categorias c ON g.categoria_id = c.id
-                WHERE g.pago = 'sim'
                 GROUP BY c.id";
         
         $stmt = $pdo->query($sql);
@@ -41,7 +40,6 @@ if ($method == 'GET') {
     else if ($tipo == 'meses') {
         $sql = "SELECT DATE_FORMAT(data, '%Y-%m') as mes, SUM(valor) as total
                 FROM gastos
-                WHERE pago = 'sim'
                 GROUP BY DATE_FORMAT(data, '%Y-%m')
                 ORDER BY mes DESC
                 LIMIT 6";

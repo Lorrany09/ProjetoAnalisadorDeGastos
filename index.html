@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analisador de gastos</title>
-    <link rel="stylesheet" href="index.css?v=1.0">
+    <link rel="stylesheet" href="index.css?v=2.2">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -49,9 +49,11 @@
 
         <div class="table-container">
             <div class="tabelaGastosPagos">
-                <h2>Compras pagas</h2>
                 <table id="tabelaGastosPagos">
                     <thead>
+                        <tr>
+                            <th colspan="6" id="tituloPrincipal">Compras pagas</th>
+                        </tr>
                         <tr>
                             <th>Nome</th>
                             <th>Data</th>
@@ -66,9 +68,11 @@
             </div>
             
             <div class="tabelaGastosNaoPagos">
-                <h2>Compras não pagas</h2>
                 <table id="tabelaGastosNaoPagos">
                     <thead>
+                        <tr>
+                            <th colspan="6" id="tituloPrincipal">Compras não pagas</th>
+                        </tr>
                         <tr>
                             <th>Nome</th>
                             <th>Data</th>
@@ -83,7 +87,14 @@
             </div>
         </div>
         
+        <div class="tituloGrafico">
+            <h2>Gráficos</h2>
+        </div>
         <div class="graficos-container">
+            <div class="grafico-comparativo">
+                <h3>Gastos pagos vs Não pagos</h3>
+                <canvas id="graficoBarrasComparativo" width="400" height="300"></canvas>
+            </div>
             <div class="grafico-categoria">
                 <h3>Gastos por Categoria</h3>
                 <canvas id="graficoPizzaCategorias" width="400" height="300"></canvas>
@@ -94,6 +105,19 @@
             </div>
         </div>
     </main>
-    <script src="funcoes.js"></script>
+    <footer>
+        <p>Todos os direitos reservados para <a href="https://github.com/Lorrany09" target="_blank" rel="noopener noreferrer">@Lorrany</a></p>
+    </footer>
+    <script src="funcoes.js?v=2"></script>
+    <script>
+        window.onload = function () {
+            carregarCategorias();
+            carregarPagamentos();
+            carregarListaGastos();
+            carregarGraficoPorCategoria();
+            carregarGraficoComparativo();
+            carregarGraficoPorMes();
+        }
+    </script>
 </body>
 </html>
