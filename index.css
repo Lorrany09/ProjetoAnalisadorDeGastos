@@ -8,10 +8,11 @@
 }
 
 :root{
-    --fundoBody: rgb(255, 203, 255);
+    --fundoBody: rgb(255, 182, 182);
     --rosaClaro: rgb(255, 125, 186);
-    --rosaEscuro: rgb(255, 4, 125);
-    --lilas: rgb(221, 182, 255);
+    --vermelhoEscuro: rgb(105, 13, 13);
+    --verdeEscuro: rgb(13, 105, 15);
+    --rosaClaroT: rgba(255, 125, 186, 0.359);
 }
 
 body{
@@ -21,105 +22,35 @@ body{
     font-size: 25px;
 }
 
+header{
+    background-color: var(--vermelhoEscuro);
+    height: 5rem;
+}
+
+.conjunto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 206px;
+    padding: 0;
+}
+
+.conjunto img {
+    width: 300px;
+    height: auto;
+}
+
+h1 {
+    font-size: 5rem;
+    color: var(--vermelhoEscuro);
+    position: relative;
+    bottom: 6rem;
+}
+
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.formCard{
-    background-color: var(--lilas);
-    margin: 20px;
-    padding: 20px;
-    width: 50rem;
-    max-width: 90%;
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0.5);
-}
-
-.formCard h2{
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-form{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-form > div{
-    flex: 1;
-    min-width: 150px;
-}
-
-label{
-    display: flex;
-    flex-direction: column;
-}
-
-#valor, #nome, #data, #categorias, #tipo, #pagamento{
-    width: 100%;
-    height: 2rem;
-    border-radius: 20px;
-    border: none;
-    padding: 0 10px;
-    background-color: var(--rosaClaro);
-    font-size: 20px;
-}
-
-.botao{
-    flex: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.botao button{
-    width: 6rem;
-    height: 2rem;
-    border-radius: 30px;
-    border: 1px solid black;
-    transition: ease 0.5s;
-    cursor: pointer;
-    background-color: var(--rosaClaro);
-    font-size: 20px;
-}
-
-.botao button:hover{
-    background-color: black;
-    color: white;
-    transform: scale(1.05);
-}
-
-hr{
-    height: 2px;
-    background-color: black;
-    border: none;
-    margin: 20px 0;
-}
-
-.graficos-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    width: 100%;
-    margin: 20px 0;
-}
-
-.tituloGrafico{
-    text-align: center;
-}
-
-.grafico-comparativo, .grafico-categoria, .grafico-mensal{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: var(--lilas);
-    padding: 20px;
-    border-radius: 20px;
 }
 
 .table-container{
@@ -140,6 +71,9 @@ hr{
     max-height: none;
     height: auto;
     overflow: visible;
+    z-index: 1;
+    position: relative;
+    bottom: 13rem;
 }
 
 table{
@@ -149,13 +83,14 @@ table{
 }
 
 th, td{
-    border: 3px solid var(--rosaEscuro);
+    border: 3px solid var(--vermelhoEscuro);
     padding: 10px;
-    background-color: white;
+    background-color: var(--rosaClaroT);
+    color: var(--vermelhoEscuro);
 }
 
 th{
-    color: var(--rosaEscuro);
+    color: var(--vermelhoEscuro);
     text-align: center;
 }
 
@@ -165,7 +100,7 @@ tbody{
 }
 
 #tituloPrincipal{
-    background-color: var(--rosaEscuro);
+    background-color: var(--vermelhoEscuro);
     color: white;
 }
 
@@ -173,10 +108,41 @@ tbody{
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--vermelhoEscuro);
+}
+
+.graficos-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    margin: 20px 0;
+    bottom: 5rem;
+}
+
+.tituloGrafico{
+    text-align: center;
+    font-size: 3rem;
+    color: var(--vermelhoEscuro);
+    bottom: 8rem;
+}
+
+.graficos-container, .tituloGrafico{
+    position: relative;
+}
+
+.grafico-comparativo, .grafico-categoria, .grafico-mensal{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--rosaClaroT);
+    padding: 20px;
+    border-radius: 20px;
 }
 
 footer{
-    background-color: var(--rosaEscuro);
+    background-color: var(--vermelhoEscuro);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,4 +156,11 @@ footer{
 a{
     text-decoration: none;
     color: white;
+}
+
+hr{
+    border: 3px solid var(--vermelhoEscuro);
+    width: 85rem;
+    position: relative;
+    bottom: 1rem;
 }

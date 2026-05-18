@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inconsolata:wght@200..900&family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Nova+Square&family=Oswald:wght@200..700&family=Prosto+One&family=Roboto+Slab:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Caveat', cursive;
+}
+
+:root{
+    --rosaClaro: rgb(255, 125, 186);
+    --fundoBody: rgb(255, 182, 182);
+    --vermelhoEscuro: rgb(105, 13, 13);
+    --verdeEscuroT: rgba(13, 105, 15, 0.527);
+    /* --verdeEscuroT: rgba(13, 82, 105, 0.527); */
+    --rosaClaroT: rgba(255, 125, 186, 0.359);
+}
+
+body{
+    background-color: var(--verdeEscuroT);
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+header{
+    display: flex;
+    align-items: baseline;
+    margin-left: 20px;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.avisoSucesso{
+    border-radius: 30px;
+    border: 2px solid var(--vermelhoEscuro);
+    color: var(--vermelhoEscuro);
+    font-size: 35px;
+    background-color: var(--rosaClaroT);
+    min-width: 12rem;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.avisoErro{
+    border-radius: 30px;
+    border: 2px solid red;
+    color: red;
+    font-size: 35px;
+    background-color: rgba(255, 125, 125, 0.396);
+    min-width: 12rem;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.formCard{
+    background-color: var(--vermelhoEscuro);
+    margin: 20px;
+    padding: 20px;
+    width: 50rem;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0.5);
+}
+
+.formCard h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+form > div{
+    flex: 1;
+    min-width: 150px;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+}
+
+#valor, #nome, #data, #categorias, #tipo, #pagamento{
+    width: 100%;
+    height: 2rem;
+    border-radius: 20px;
+    border: none;
+    padding: 0 10px;
+    background-color: var(--rosaClaroT);
+    color: white;
+    font-size: 20px;
+}
+
+#valor:hover, #nome:hover, #data:hover, #categorias:hover, #tipo:hover, #pagamento:hover{
+    background-color: var(--verdeEscuroT);
+}
+
+.botao{
+    flex: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.botao button{
+    width: 6rem;
+    height: 2rem;
+    border-radius: 30px;
+    border: 1px solid white;
+    transition: ease 0.5s;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+}
+
+.botao button:hover{
+    background-color: black;
+    transform: scale(1.05);
+}
+
+hr{
+    border: 2px solid white;
+    margin: 20px 0;
+}
+
+footer{
+    background-color: var(--vermelhoEscuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    margin-top: auto;
+    font-weight: 900;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+select, #data{
+    cursor: pointer;
+}
+
+.imagem img{
+    position: fixed;
+    top: 14rem;
+    right: 70rem;
+    z-index: -1;
+}
