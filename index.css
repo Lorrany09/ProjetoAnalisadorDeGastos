@@ -164,3 +164,11 @@ hr{
     position: relative;
     bottom: 1rem;
 }
+
+.fada{
+    width: 150px;
+    height: 270px;
+    position: absolute;
+    top: 1100px;
+    right: 20px;
+}

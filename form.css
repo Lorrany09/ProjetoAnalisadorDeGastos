@@ -165,7 +165,7 @@ select, #data{
     cursor: pointer;
 }
 
-.imagem img{
+.desenho{
     position: fixed;
     top: 14rem;
     right: 70rem;
